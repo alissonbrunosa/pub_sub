@@ -4,9 +4,6 @@ require_relative 'executor'
 
 redis = Redis.new(host: "localhost")
 
-
-puts redis.quit
-
 redis.subscribe("process_event", "process_metric") do |on|
   on.message do |channel, message|
     Thread.new do 
