@@ -3,9 +3,9 @@ require 'json'
 class Metric
   attr_accessor :lat, :lng
 
-  def initialize(lat:nil, lng:nil)
-    @lat = lat || raise(ArgumentError, "Argument 'lat' not be nil")
-    @lng = lng || raise(ArgumentError, "Argument 'lng' not be nil")
+  def initialize(lat:, lng:)
+    @lat = lat
+    @lng = lng
   end
 
   def to_json
